@@ -1,13 +1,21 @@
-import React, {Component} from 'react';
-import './App.css';
-import FxDashboardPanel from "./component/FxDashboardPanel";
+import React, {Component} from 'react'
+import './App.css'
+import FxDashboardPanel from "./component/FxDashboardPanel"
+import CountrySelect from "./component/CountrySelect"
+import * as CountryDTOList from "./dto/CountryDTO"
 
 class App extends Component {
-  render() {
-    return (
-        <FxDashboardPanel/>
-    );
-  }
+
+    testCountries = CountryDTOList.testCountyList
+
+    render() {
+        return (
+            <div>
+                <FxDashboardPanel/>
+                <CountrySelect countries={this.testCountries}/>
+            </div>
+        );
+    }
 }
 
 export default App;
